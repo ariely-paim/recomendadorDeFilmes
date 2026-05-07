@@ -18,18 +18,18 @@ class PerfilCinefiloTest {
     @Test
     @DisplayName("deve criar perfil com pesos válidos")
     void deve_CriarPerfil_Quando_PesosValidos() {
-        assertDoesNotThrow(() -> perfil.setPesoGenero(Genero.ACAO, 0.8)); // [cite: 223]
+        assertDoesNotThrow(() -> perfil.setPesoGenero(Genero.ACAO, 0.8)); 
     }
 
     @Test
     @DisplayName("deve lançar exceção quando peso for maior que 1.0")
     void deve_LancarExcecao_Quando_PesoMaiorQueUm() {
-        assertThrows(PesoInvalidoException.class, () -> perfil.setPesoGenero(Genero.DRAMA, 1.5)); // [cite: 189, 223]
+        assertThrows(PesoInvalidoException.class, () -> perfil.setPesoGenero(Genero.DRAMA, 1.5)); 
     }
 
     @Test
     @DisplayName("deve lançar exceção quando duração mínima for maior que a máxima")
     void deve_LancarExcecao_Quando_DuracaoMinimaMaiorQueMaxima() {
-        assertThrows(DuracaoInvalidaException.class, () -> perfil.setFaixaDuracao(120, 90)); // [cite: 190]
+        assertThrows(DuracaoInvalidaException.class, () -> perfil.setFaixaDuracao(120, 90));
     }
 }
